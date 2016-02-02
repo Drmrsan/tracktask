@@ -1,0 +1,56 @@
+ <% if user_signed_in? %>
+    <div class="side-menu">
+        <nav class="navbar navbar-default" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <div class="brand-wrapper">
+                    <!-- Hamburger -->
+                    <button type="button" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                <!-- Brand -->
+                <div class="brand-name-wrapper">
+                <%= image_tag ("logo-ruby.png"), class: "navbar-brand" %><%= link_to "TrackTask", root_path, class: "navbar-brand" %>
+                </div>
+                <!-- Search -->
+                <a data-toggle="collapse" href="#search" class="btn btn-default" id="search-trigger">
+                <span class="glyphicon glyphicon-search"></span>
+                </a>
+                <!-- Search body -->
+                <div id="search" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <form class="navbar-form" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <button type="submit" class="btn btn-default "><span class="glyphicon glyphicon-ok"></span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!-- Main Menu -->
+            <div class="side-menu-container">
+                <ul class="nav navbar-nav">
+                <li class="sidebar_icon"><%= link_to raw('<i class="fa fa-user"></i>') + "Signed in as: " + current_user.email %></li>
+                    <li class="sidebar_icon"><%= link_to raw('<i class="fa fa-user"></i>') + "Sign Out" , destroy_user_session_path, method: :delete %></li>
+                    <li><%= link_to "New Task", new_task_list_path, id: "new_task", remote: true %></li>
+                    
+                    <% if user_signed_in? %>
+                        
+                            <% @task_lists.each do |task_list| %>
+                                <% if task_list.user_id == current_user.id %>
+                                    <li class="sidebar_icon"><%= link_to raw('<i class="fa fa-star"></i>' + task_list.name), task_list %></li>
+                                <% end %>                            
+                            <% end %>
+                    <% end %>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </div>
+<% end %>
+
+

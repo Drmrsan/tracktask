@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="side-body">
+	    <div class="row">
+	        <div class="col-lg-12">
+				<h3 class="task_list_title"> <%= @task_list.name %> 
+				<%= link_to raw('<i class="fa fa-edit"></i>'), edit_task_list_path %>
+				<%= link_to raw('<i class="fa fa-trash"></i>'), task_list_path(@task_list), method: :delete, data: { confirm: 'Are you sure?' } %>
+				<p class="created_at">created by <%= @task_list.user.email %></p></h3>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="input-group">
+					<div class="input-group-addon"><b>+</b></div>
+					<input type="text" class="form-control" data-toggle="modal" data-target="#myModal" placeholder: "Add Task Item" />
+				</div>
+				<%= render 'task_items/task_item_form' %>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-lg-12">
+				<% if !@task_list.task_items.incomplete.blank? %>
+					<%= render @task_list.task_items.incomplete %>
+				<% end %>
+			</div>
+		</div>
+		<br>
+		
+		<div class="row">
+			<div class="col-lg-12">
+
+				<div class="completed_items_wrapper">
+					<%= link_to "Show completed items", "#toggle_completed_items", id: "completed_items" %>
+				</div>
+				<% if !@task_list.task_items.complete.blank? %>
+					<div id="toggle_completed_items">
+						<%= render @task_list.task_items.complete %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

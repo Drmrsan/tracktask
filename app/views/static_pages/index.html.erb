@@ -1,0 +1,26 @@
+<!-- Main Content -->
+
+
+<% if user_signed_in? %>
+	<div class="container-fluid">
+		<div class="side-body">
+			<div class="row">
+				<div class="col-lg-6 col-lg-offset-3 landing-page">
+					<h1 class="task_list_title_index">Let the Tasks be<br> strong within you!</h1>
+				</div>
+					
+<% else %>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-6 col-lg-offset-3 landing-page">
+				<h1 class="task_list_title_index">Welcome to TrackTask!</h1>
+				<br>
+				<p class="index_text">Keep track of your daily tasks, and never ever forget anythig.</p>
+				<p class="index_text">
+					<%= link_to "Login", new_user_session_path, class:"login_button" %> | 
+					<%= link_to "Sign Up", new_user_registration_path ,class:"login_button"%></p>
+<% end %>	
+
+		</div>
+	</div>
+</div>

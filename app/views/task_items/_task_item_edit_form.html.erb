@@ -1,0 +1,14 @@
+
+<%= simple_form_for([@task_list, @task_item]) do |f| %>
+	<form class="form-horizontal">
+			<div class="form-group">
+			<%= f.input :title %>
+			<%= f.input :description %>
+			<%= f.text_field :duedate, class:"datepicker" %>
+			<br>
+			<br>
+			<%= f.button :submit %>
+			</div>
+	</form>
+<% end %>
+	

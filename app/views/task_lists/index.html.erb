@@ -1,0 +1,18 @@
+<!-- Main Content -->
+<div class="container-fluid">
+    <div class="side-body">
+		<div class="row">
+			<div class="col-lg-6 col-lg-offset-3 landing-page">
+
+				<% if user_signed_in? %>
+						<h1 class="task_list_title">Let the Tasks be strong within you!</h1>
+				<% else %>
+					<h1>Welcome!</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus quae quod quis, nobis dignissimos nisi obcaecati libero pariatur nihil non labore quaerat iste totam commodi cumque magnam voluptatem asperiores maiores?</p>
+					<p>Please feel free to <%= link_to "Login", new_user_session_path %> or <%= link_to "Sign Up", new_user_registration_path %></p>
+				<% end %>	
+				
+			</div>
+		</div>
+    </div>
+</div>
