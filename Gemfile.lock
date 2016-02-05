@@ -222,6 +222,7 @@ DEPENDENCIES
   client_side_validations-simple_form
   coffee-rails (~> 4.1.0)
   devise (~> 3.5, >= 3.5.5)
+  execjs
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails (~> 5.0, >= 5.0.5)
