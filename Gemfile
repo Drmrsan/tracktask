@@ -29,11 +29,11 @@ group :development do
   gem 'spring'
   gem 'better_errors', '~> 2.1', '>= 2.1.1'
   gem "binding_of_caller"
-  gem 'capistrano',         require: false
-  gem 'capistrano-rvm',     require: false
-  gem 'capistrano-rails',   require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma',   require: false
+  gem 'capistrano'
+  gem 'capistrano-rbenv', github: "capistrano/rbenv"
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano3-puma'
 end
 
 group :production do
