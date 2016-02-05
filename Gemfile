@@ -15,8 +15,6 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'devise', '~> 3.5', '>= 3.5.5'
 gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
 gem 'sqlite3'
-gem 'execjs'
-gem 'therubyracer'
 
 gem 'simple_form'
 gem 'client_side_validations'
