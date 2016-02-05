@@ -16,8 +16,7 @@
 //= require rails.validations
 //= require rails.validations.simple_form 
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require turbolinks .
 
 $(document).ready(function () {
 
