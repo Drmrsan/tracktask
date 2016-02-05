@@ -48,7 +48,7 @@ $(document).ready(function () {
    $('.datepicker').datepicker({ dateFormat: 'dd-mm-yy' })
       .on('changeDate', function(ev){
         $(ev.target).find('input').change().focusout();
-      });
+    });
 
-      $('#myModal').on('shown.bs.modal', function () { $(ClientSideValidations.selectors.forms).validate(); });
+    $('#myModal').on('shown.bs.modal', function () { $(ClientSideValidations.selectors.forms).validate(); });
 })
