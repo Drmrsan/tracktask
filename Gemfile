@@ -30,7 +30,7 @@ group :development do
   gem 'better_errors', '~> 2.1', '>= 2.1.1'
   gem "binding_of_caller"
   gem 'capistrano'
-  gem 'capistrano-rbenv', github: "capistrano/rbenv"
+  gem 'capistrano-rbenv'
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
   gem 'capistrano3-puma'
