@@ -6,6 +6,7 @@ set :application,     'tracktask'
 set :user,            'demo'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
+set :rbenv_ruby, '2.3.0'
 
 # Don't change these unless you know what you're doing
 set :pty,             true
